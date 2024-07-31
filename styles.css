@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.about-content {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 100px auto;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 10px;
+}
+.intro, .contact-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.game-box:hover {
+    transform: rotateY(15deg) rotateX(10deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.game-box h3 {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #3b29ff;
+}
+
+.game-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+footer {
+    background-color: #3b29ff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form .btn {
+    background-color: #3b29ff;
+    border-color: #3b29ff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-form .btn:hover {
+    background-color: #2a1f99;
+    border-color: #2a1f99;
+}
+
+/* 3D Animation */
+.game-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: left 0.7s;
+}
+
+.game-box:hover::before {
+    left: 100%;
+}
+
+.game-box:hover {
+    transform: translateY(-10px) rotateY(15deg) rotateX(10deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
